@@ -1,0 +1,11 @@
+ <body class="text-center">
+    <form class="form-signin">
+<h3> products </h3>
+<% @product.each do |product| %>
+<h4><%= product.id%></h4>
+<p><%= product.name%></p>
+<p><%= product.price%></p>
+<p><%= product.category%></p>
+<%= link_to 'more infomation', product_path(product), :class => 'btn btn-default' %>
+</div>
+<% end %>

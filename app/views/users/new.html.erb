@@ -1,0 +1,40 @@
+<h3> new user </h3>
+<body class="text-center">
+<%= form_for :user, url: users_path do |f| %>
+   <% if @user.errors.any? %>
+        <%@user.errors.full_messages.each do |msg|%>
+            <div class="alert alert-danger"><%= msg%></div>
+         <%end%>
+    <%end%>
+    <p>
+        name<br>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        surname<br>
+        <%= f.text_field :surname %>
+    </p>
+    <p>
+        email <br>
+        <%= f.text_field :email %>
+    </p>
+     numberphone<br>
+        <%= f.text_field :numberphone %>
+    </p>
+   <p>
+        about yourself<br>
+        <%= f.text_area :bio %>
+    </p>
+    <p>
+        photo<br>
+        <%= f.text_field :photo %>
+    </p>
+    <p>
+        password<br>
+        <%= f.text_field :password %>
+    </p>
+    <%admin = 0%>
+       <%= f.submit %>
+    </p>
+ 
+<% end %>

@@ -1,0 +1,32 @@
+<h3> edit product </h3>
+<body class="text-center">
+<%= form_for :product, url: product_path(@product), method: :patch do |f| %>
+   <% if @product.errors.any? %>
+        <%@product.errors.full_messages.each do |msg|%>
+            <div class="alert alert-danger"><%= msg%></div>
+         <%end%>
+    <%end%> 
+    <p>
+        name<br>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        price<br>
+        <%= f.text_field :price %>
+    </p>
+    <p>
+        picture <br>
+        <%= f.text_field :picture %>
+    </p>
+     category<br>
+        <%= f.text_field :category %>
+    </p>
+   <p>
+        description<br>
+        <%= f.text_area :description %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+    
+<% end %>
